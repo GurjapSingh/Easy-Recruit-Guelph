@@ -21,7 +21,7 @@ function postConfirmation(results){
     }
     if (applyPage == false) {
         var popUpContent = document.getElementById("container");
-        popUpContent.innerHTML = "<h2>Please go to application page to use controls</h2>";
+        popUpContent.innerHTML = "<p>Please go to application page to use controls</p>";
     }
 }
 function injectCustomTags(){
@@ -41,7 +41,7 @@ function injectCustomTags(){
 uploadDoc.addEventListener("click", function(){
     // alert("upload doc click");
     chrome.tabs.executeScript({
-        code: 'document.getElementById("uploadDocument").scrollIntoView(true);'
+        code: 'document.getElementById("uploadDocument").click();'
     });
 });
 hoverPackage.addEventListener("click",function(){
