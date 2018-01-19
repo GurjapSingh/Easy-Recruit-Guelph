@@ -11,8 +11,30 @@
       body {
         margin: 10px;
         white-space: nowrap;
+        width: 275px;
       }
+      * {
+    box-sizing: border-box;
+}
+    button{
+        display: block;
+    }
 
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    /* height: 300px; /* Should be removed. Only for demonstration */ */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
       h1 {
         font-size: 15px;
       }
@@ -36,12 +58,30 @@
   <body>
     <h1>Easy Recruit Guelph</h1>
     <div id="container">
-      <span>Choose an action</span>
+      <!-- <span>Choose an action</span>
       <button id="uploadDocument">upload Document</button>
       <button  id="hoverPackage">Go to Package Name</button>
       <button  id="hoverResume">Go to Resume List</button>
       <button  id="createPackage">make package</button>
-      <script type="text/javascript" src="popup.js"></script>
+      <script type="text/javascript" src="popup.js"></script> -->
     </div>
-  </body>
+    <div class="row">
+  <div class="column">
+    <h2>Actions</h2>
+    <button id="uploadDocument">upload Document</button>
+  </div>
+  <div class="column" >
+    <h2>Scrolling</h2>
+    <button  id="hoverPackage">Go to Package Name</button>
+    <button  id="hoverResume">Go to Resume List</button>
+
+  </div>
+
+</div>
+<h1>Latest Resume And Cover Letter</h1>
+<strong>CL: </strong><p id="fillLastCL" style="overflow: visible;"></p>
+<strong>Res: </strong><p id="fillLastRes" style="overflow: visible;"></p>
+<button  id="createPackage">Make package using the above documents</button>
+<script type="text/javascript" src="popup.js"></script>
+ </body>
 </html>

@@ -6,7 +6,10 @@ injectPackageName(); // adds the package name to the package name input field
 injectCoverLetterName(); // adds id to navigate to first cover letter (this is the latest cover letter)
 injectResumeStart(); // adds id to navigate to latest resume
 injectTranscriptSelect(); // selects the transcript
+fillLastCLandResume();
 
+var latestCoverLetter;
+var latestResume;
 function populatePackageName(){
     var foundID = false;
 
@@ -88,3 +91,13 @@ function injectTranscriptSelect(){
         }
     }
 }
+function fillLastCLandResume(){
+    var body = document.body.innerText;
+    var coverLetter = body.split("Cover Letter (Clear Selection)")[1].split("\n")[2];
+    var res = body.split("Resume (Clear Selection)")[1].split("\n")[2];
+
+    latestCoverLetter = coverLetter;
+    latestResume = res;
+}
+var package = [latestCoverLetter,latestResume];
+package;

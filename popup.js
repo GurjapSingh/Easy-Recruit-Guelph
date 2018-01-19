@@ -1,9 +1,11 @@
-
 var applyPage = false;
-uploadDoc = document.getElementById("uploadDocument");
-hoverPackage = document.getElementById("hoverPackage");
-hoverResume = document.getElementById("hoverResume");
-createPackage = document.getElementById("createPackage");
+var uploadDoc = document.getElementById("uploadDocument");
+var hoverPackage = document.getElementById("hoverPackage");
+var hoverResume = document.getElementById("hoverResume");
+var createPackage = document.getElementById("createPackage");
+
+var latestCL = document.getElementById("fillLastCL");
+var latestRes = document.getElementById("fillLastRes");
 
 chrome.tabs.executeScript(null,{code: 'document.body.innerText;'},postConfirmation);
 
@@ -26,13 +28,20 @@ function injectCustomTags(){
     // alert("injectingcustomtags");
     chrome.tabs.executeScript({
         file: 'clicker.js'
+    },function(results){
+        // alert(results[0][0]);
+        // latestCL.innerHTML = results[0][0];
+        // latestRes.innerHTML = results[0][1];
+        latestCL.innerHTML = results[0][0];
+        latestRes.innerHTML = results[0][1]
     });
+
 }
 
 uploadDoc.addEventListener("click", function(){
     // alert("upload doc click");
     chrome.tabs.executeScript({
-        file: 'clicker.js'
+        code: 'document.getElementById("uploadDocument").scrollIntoView(true);'
     });
 });
 hoverPackage.addEventListener("click",function(){
