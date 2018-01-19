@@ -1,21 +1,18 @@
-// chrome.tabs.executeScript(null, {
-//     code: 'var string1 = "Hello, World !"; string1'
-// }, function(resultArr) {
-//     processString1(resultArr[0]);
-// });
-//
-// function processString1(str1) {
-//     alert('String1 = "' + str1 + '"');
-// }
+
 var applyPage = false;
 var uploadDoc;
-chrome.tabs.executeScript(null,{code: 'document.body.innerText;'},function (results){
-    // alert(results.length);
+var hoverPackege;
+
+chrome.tabs.executeScript(null,{code: 'document.body.innerText;'},postConfirmation);
+
+function postConfirmation(results){
     //alert(results[0]);
     for(var i = 0; i < results.length;i++){
         if(results[i].includes("OPTION 1: Apply with an application")){
             applyPage = true;
             uploadDoc = document.getElementById("uploadDocument");
+            hoverPackege = document.getElementById("hoverPackege");
+            // injectCustomTags();
 
         }
     }
@@ -23,16 +20,27 @@ chrome.tabs.executeScript(null,{code: 'document.body.innerText;'},function (resu
         var popUpContent = document.getElementById("container");
         popUpContent.innerHTML = "<h2>Please go to application page to use controls</h2>";
     }
-
-});
+}
+function injectCustomTags(){
+    // alert("injectingcustomtags");
+    chrome.tabs.executeScript({
+        // file: 'clicker.js'
+    });
+}
 
 uploadDoc.addEventListener("click", function(){
-
-    chrome.tabs.executeScript({
-        file: 'clicker.js'
-    });
+    alert("upload doc click");
+    // chrome.tabs.executeScript({
+    //     file: 'clicker.js'
+    // });
 });
-break;
+hoverPackege.addEventListener("click",function(){
+    alert("click package");
+    // chrome.tabs.executeScript({
+    //     code:'document.getElementById("packageName").scrollIntoView(true);'
+    // });
+});
+alert("end of file");
 // chrome.tabs.executeScript({
 //     code: 'console.log("hello")'
 // });

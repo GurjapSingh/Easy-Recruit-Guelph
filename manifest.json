@@ -15,12 +15,6 @@
     "tabs",
     "storage","http://*/*",
     "https://*/*"
-  ],
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["popup.js", "clicker.js","newfile.js"],
-      "all_frames": true
-    }
   ]
+
 }
