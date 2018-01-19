@@ -1,7 +1,9 @@
 
 var applyPage = false;
-var uploadDoc;
-var hoverPackege;
+uploadDoc = document.getElementById("uploadDocument");
+hoverPackage = document.getElementById("hoverPackage");
+hoverResume = document.getElementById("hoverResume");
+createPackage = document.getElementById("createPackage");
 
 chrome.tabs.executeScript(null,{code: 'document.body.innerText;'},postConfirmation);
 
@@ -10,9 +12,8 @@ function postConfirmation(results){
     for(var i = 0; i < results.length;i++){
         if(results[i].includes("OPTION 1: Apply with an application")){
             applyPage = true;
-            uploadDoc = document.getElementById("uploadDocument");
-            hoverPackege = document.getElementById("hoverPackege");
-            // injectCustomTags();
+
+            injectCustomTags();
 
         }
     }
@@ -24,37 +25,35 @@ function postConfirmation(results){
 function injectCustomTags(){
     // alert("injectingcustomtags");
     chrome.tabs.executeScript({
-        // file: 'clicker.js'
+        file: 'clicker.js'
     });
 }
 
 uploadDoc.addEventListener("click", function(){
-    alert("upload doc click");
-    // chrome.tabs.executeScript({
-    //     file: 'clicker.js'
-    // });
+    // alert("upload doc click");
+    chrome.tabs.executeScript({
+        file: 'clicker.js'
+    });
 });
-hoverPackege.addEventListener("click",function(){
-    alert("click package");
-    // chrome.tabs.executeScript({
-    //     code:'document.getElementById("packageName").scrollIntoView(true);'
-    // });
+hoverPackage.addEventListener("click",function(){
+    // alert("click package");
+    chrome.tabs.executeScript({
+        code:'document.getElementById("packageName").scrollIntoView(true);'
+    });
 });
-alert("end of file");
-// chrome.tabs.executeScript({
-//     code: 'console.log("hello")'
-// });
-// var allH2s = document.getElementsByTagName('h2');
-// var length = allH2s.length;
-// var applyPage = false;
-// alert(length);
-// for(var i = 0; i < length; i++){
-//     console.log("hello");
-//     if(allH2s[i].innerHTML.includes("OPTION 1: Apply with an application")){
-//         alert("found");
-//         applyPage = true;
-//     }
-// }
+hoverResume.addEventListener("click",function(){
+    // alert("click package");
+    chrome.tabs.executeScript({
+        code:'document.getElementById("resumeListStart").scrollIntoView(true);'
+    });
+});
+createPackage.addEventListener("click",function(){
+    // alert("click package");
+    chrome.tabs.executeScript({
+        code:'document.querySelectorAll(\'input[value="Create Package"]\')[0].click();'
+    });
+});
+
 
 
 
