@@ -22,12 +22,14 @@ function postConfirmation(results){
     if (applyPage == false) {
         var popUpContent = document.getElementById("container");
         popUpContent.innerHTML = "<p>Please go to application page to use controls</p>";
+
+        document.getElementById("latestDocDisplay").innerHTML="";
     }
 }
 function injectCustomTags(){
     // alert("injectingcustomtags");
     chrome.tabs.executeScript({
-        file: 'clicker.js'
+        file: 'injectPage.js'
     },function(results){
         // alert(results[0][0]);
         // latestCL.innerHTML = results[0][0];
