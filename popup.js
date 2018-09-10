@@ -1,7 +1,7 @@
 var applyPage = false;
 var uploadDoc = document.getElementById("uploadDocument");
-var hoverPackage = document.getElementById("hoverPackage");
-var hoverResume = document.getElementById("hoverResume");
+// var hoverPackage = document.getElementById("hoverPackage");
+// var hoverResume = document.getElementById("hoverResume");
 var createPackage = document.getElementById("createPackage");
 
 var latestCL = document.getElementById("fillLastCL");
@@ -12,7 +12,7 @@ chrome.tabs.executeScript(null,{code: 'document.body.innerText;'},postConfirmati
 function postConfirmation(results){
     //alert(results[0]);
     for(var i = 0; i < results.length;i++){
-        if(results[i].includes("OPTION 1: Apply with an application")){
+        if(results[i].includes("APPLY WITH AN EXISTING APPLICATION PACKAGE")){
             applyPage = true;
 
             injectCustomTags();
@@ -46,18 +46,18 @@ uploadDoc.addEventListener("click", function(){
         code: 'document.getElementById("uploadDocument").click();'
     });
 });
-hoverPackage.addEventListener("click",function(){
-    // alert("click package");
-    chrome.tabs.executeScript({
-        code:'document.getElementById("packageName").scrollIntoView(true);'
-    });
-});
-hoverResume.addEventListener("click",function(){
-    // alert("click package");
-    chrome.tabs.executeScript({
-        code:'document.getElementById("resumeListStart").scrollIntoView(true);'
-    });
-});
+// hoverPackage.addEventListener("click",function(){
+//     // alert("click package");
+//     chrome.tabs.executeScript({
+//         code:'document.getElementById("packageName").scrollIntoView(true);'
+//     });
+// });
+// hoverResume.addEventListener("click",function(){
+//     // alert("click package");
+//     chrome.tabs.executeScript({
+//         code:'document.getElementById("resumeListStart").scrollIntoView(true);'
+//     });
+// });
 createPackage.addEventListener("click",function(){
     // alert("click package");
     chrome.tabs.executeScript({
