@@ -56,16 +56,7 @@ function injectPackageName(){
     if (packageField != null) {
         packageField.value = packageName
     }
-    // var h2s = document.getElementsByTagName('h2');
-    // for(var i = 0; i < h2s.length;i++){
-    //     if(h2s[i].innerHTML.includes("STEP 2: NAME YOUR APPLICATION PACKAGE")){
-    //         h2s[i].setAttribute('id','packageName');
-    //         var name = document.getElementById("name");
-    //         console.log(name);
-    //         name.value = packageName;
-    //         break;
-    //     }
-    // }
+
 }
 function injectCoverLetterName(){
     var tags = document.getElementById("requiredInPackage1");
@@ -76,17 +67,7 @@ function injectCoverLetterName(){
         splitCoverLetterInfo = coverLetterInfo.split("(Date created:")
         latestCoverLetter = splitCoverLetterInfo[0].trim() + ", "+ splitCoverLetterInfo[1].replace(")","")
     }
-    // var tags = document.querySelectorAll("strong,a,input");
-    // for(var i = 0; i < tags.length;i++){
-    //     if (tags[i].innerHTML.includes("Cover Letter") && tags[i+1].innerHTML.includes("Clear Selection")) {
-    //         tags[i].setAttribute('id','packageName');
-    //         // console.log(tags[i+2]);
-    //         if(tags[i+2].getAttribute('type') == "radio"){
-    //             tags[i+2].checked = true;
-    //         }
-    //         break;
-    //     }
-    // }
+
 }
 function injectResumeStart()
 {
@@ -99,17 +80,6 @@ function injectResumeStart()
         splitResumeInfo = resumeInfo.split("(Date created:")
         latestResume = splitResumeInfo[0].trim() + ", "+ splitResumeInfo[1].replace(")","")
     }
-    // var tags = document.querySelectorAll("strong,a,input");
-    // for(var i = 0; i < tags.length;i++){
-    //     if (tags[i].innerHTML.includes("Resume") && tags[i+1].innerHTML.includes("Clear Selection")) {
-    //         tags[i].setAttribute('id','resumeListStart');
-    //         // console.log(tags[i+2]);
-    //         if(tags[i+2].getAttribute('type') == "radio"){
-    //             tags[i+2].checked = true;
-    //         }
-    //         break;
-    //     }
-    // }
 }
 function injectTranscriptSelect(){
     var tags = document.getElementById("requiredInPackage3");

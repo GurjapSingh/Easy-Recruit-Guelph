@@ -1,7 +1,5 @@
 var applyPage = false;
 var uploadDoc = document.getElementById("uploadDocument");
-// var hoverPackage = document.getElementById("hoverPackage");
-// var hoverResume = document.getElementById("hoverResume");
 var createPackage = document.getElementById("createPackage");
 
 var latestCL = document.getElementById("fillLastCL");
@@ -31,9 +29,7 @@ function injectCustomTags(){
     chrome.tabs.executeScript({
         file: 'injectPage.js'
     },function(results){
-        // alert(results[0][0]);
-        // latestCL.innerHTML = results[0][0];
-        // latestRes.innerHTML = results[0][1];
+
         latestCL.innerHTML = results[0][0];
         latestRes.innerHTML = results[0][1]
     });
@@ -46,18 +42,7 @@ uploadDoc.addEventListener("click", function(){
         code: 'document.getElementById("uploadDocument").click();'
     });
 });
-// hoverPackage.addEventListener("click",function(){
-//     // alert("click package");
-//     chrome.tabs.executeScript({
-//         code:'document.getElementById("packageName").scrollIntoView(true);'
-//     });
-// });
-// hoverResume.addEventListener("click",function(){
-//     // alert("click package");
-//     chrome.tabs.executeScript({
-//         code:'document.getElementById("resumeListStart").scrollIntoView(true);'
-//     });
-// });
+
 createPackage.addEventListener("click",function(){
     // alert("click package");
     chrome.tabs.executeScript({
