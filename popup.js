@@ -8,7 +8,7 @@ var latestRes = document.getElementById("fillLastRes");
 chrome.tabs.executeScript(null,{code: 'document.body.innerText;'},postConfirmation);
 
 function postConfirmation(results){
-    //alert(results[0]);
+    // alert(results.length);
     for(var i = 0; i < results.length;i++){
         if(results[i].includes("APPLY WITH AN EXISTING APPLICATION PACKAGE")){
             applyPage = true;
@@ -16,6 +16,12 @@ function postConfirmation(results){
             injectCustomTags();
 
         }
+        else if(results[i].includes("Upload a Document")){
+            chrome.tabs.executeScript({
+                code: 'document.getElementById("docType").selectedIndex = 1;document.getElementById("docName").value = document.getElementsByName("postingId")[0].value + " cover letter";document.getElementsByClassName("btn btn-primary btn-small")[0].disabled = false'
+            });
+        }
+
     }
     if (applyPage == false) {
         var popUpContent = document.getElementById("container");
