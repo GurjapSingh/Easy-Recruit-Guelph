@@ -1,6 +1,18 @@
 # Easy-Recruit-Guelph
 Makes applying to jobs via RG easier.
 
+Verson 2
+------------------------------------------
+Experience Guelph (formerly Regruit Guelph) went through an update and made some things easier. It no longer lists your past cover letters, resumes, and application packages and now has them in drop downs. As such, there is no need for the functions that were used to automatically scroll to the latest documents. Now this extensions just allows you to
+  
+  Features
+  - upload documents
+  - display names of latest cover letter and resume, these have also been selected 
+  - fills out package name with the format <job id> <organization>
+  
+
+Version 1
+------------------------------------------
 Using Recruit Guelph to apply to jobs can become more time consuming when you have a large amount of resumes and cover letters
 from all of your past applications. 
 In order to apply the following steps must be done
@@ -13,10 +25,10 @@ In order to apply the following steps must be done
   7. scroll past all previously uploaded resumes and select transcript
   8. click "create a package"
   
-This extension makes it easier to apply. You simply click the upload document button to upload your documents. the extension
-will now display the names of the latest resume and cover letter and they have been selected already. It has already filled out 
-the package name field by using the <job id> <organization> as the title. You can now click the make package button in the
-make an application using the selected cover letter, resume, and transcript.
-
-There are also additional controls to scroll to the package name input field, the latest resumes, and the latest cover letters so 
-you can confirm that the latest documents have been selected to build your package.
+  Features
+  - upload document, no need to scroll all the way down the page
+  - display names of latest cover letter and resume, these have also been selected 
+  - fills out package name with the format <job id> <organization>
+  - make package with latest documents, no longer need to scroll all the way down the page
+  - scrolling controls allows you to scroll to the selected cover letter and resume. you no longer need to scroll through the     page to make sure you've selected the latest documents
+ 
