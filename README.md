@@ -8,7 +8,9 @@ Experience Guelph (formerly Regruit Guelph) went through an update and made some
   Features
   - upload documents
   - display names of latest cover letter and resume, these have also been selected 
-  - fills out package name with the format <job id> <organization>
+  - fills out package name with the format "<job id> <organization>"
+  - on the upload a document for cover letters, automatically names the cover letter with "<job id> cover letter", selects cover letter
+    from document type, and also enables the upload a new file button
   
 
 Version 1
